@@ -1,0 +1,591 @@
+/* Reset */
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	min-height: 100vh;
+}
+
+body,
+footer {
+	font-family: Georgia, serif;
+	color: #252525;
+}
+
+.container {
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+.clear:after,
+.clear:before {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+/*
+1. Navbar
+2. Section Chamada
+3. Section Sobre
+4. Section Produtos
+5. Section Unidades
+6. Section Assinatura
+7. Rodapé
+8. Section 404
+*/
+
+/* 1. Navbar */
+
+.topnav {
+	overflow: hidden;
+	background-color: #333;
+	transition: .3s;
+}
+
+.topnav a {
+	float: right;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
+}
+
+.topnav .logo {
+	float: left;
+	display: block;
+}
+
+.topnav .item {
+	margin-top: 10px;
+}
+
+.topnav .item::after {
+	content: "";
+	display: block;
+	height: 5px;
+	background-color: #f2f2f2;
+	width: 0%;
+	transition: .3s;
+}
+
+.topnav .item:hover:after {
+	width: 100%;
+	transition: .3s;
+}
+
+.topnav .icon {
+	display: none;
+	margin-top: 10px;
+	margin-right: 10px;
+}
+
+@media screen and (max-width: 767px) {
+	.topnav a:not(:first-child) {
+		display: none;
+	}
+
+	.topnav a.icon {
+		float: right;
+		display: block;
+	}
+
+	.topnav .item:hover:after {
+		width: 10%;
+		transition: .3s;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.topnav.responsive {
+		position: relative;
+	}
+
+	.topnav.responsive .icon {
+		right: 0;
+		top: 0;
+		display: block;
+		float: none;
+		text-align: end;
+	}
+
+	.topnav.responsive .item {
+		float: none;
+		display: block;
+		text-align: right;
+	}
+
+	.topnav.responsive .item::after {
+		content: "";
+		display: block;
+		height: 5px;
+		float: right;
+		background-color: #f2f2f2;
+		width: 0%;
+		transition: .3s;
+	}
+
+	.topnav .item:hover:after {
+		width: 10%;
+		transition: .3s;
+	}
+}
+
+/* 48em = 768px */
+
+@media (min-width: 48em) {
+	.header li {
+		float: left;
+	}
+
+	.header li a {
+		padding: 20px 30px;
+	}
+
+	.header .menu {
+		clear: none;
+		float: right;
+		max-height: none;
+	}
+
+	.header .menu-icon {
+		display: none;
+	}
+}
+
+
+/* 2. Section Chamada */
+
+#chamada {
+	background: url("../img/bg-intro.jpg") no-repeat center center;
+	background-size: cover;
+	padding: 130px 0;
+}
+
+#chamada h1,
+#chamada h5 {
+	color: #fff;
+	text-align: center;
+}
+
+#chamada h1 {
+	font-size: 3em;
+	text-transform: uppercase;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+	#chamada h1 {
+		font-size: 2.75em;
+	}
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+	#chamada h1 {
+		font-size: 2.5em;
+	}
+}
+
+@media screen and (max-width: 575px) {
+	#chamada h1 {
+		font-size: 2.25em;
+	}
+}
+
+#chamada h5 {
+	font-size: 1.125em;
+	font-style: italic;
+}
+
+#chamada h1::after {
+	width: 20px;
+	height: 4px;
+	background-color: #fff;
+	content: "";
+	display: block;
+	margin: 0 auto;
+	transition: .3s;
+}
+
+#chamada h1:hover:after {
+	width: 100px;
+	transition: .3s;
+}
+
+/* 3. Section Sobre */
+
+#sobre {
+	padding: 60px 0;
+}
+
+#sobre .container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	flex-flow: row wrap;
+}
+
+#sobre h2 {
+	font-size: 2.25em;
+	margin-bottom: 60px;
+	text-align: center;
+}
+
+@media screen and (max-width: 767px) {
+	#sobre h2 {
+		font-size: 2em;
+	}
+}
+
+
+#sobre p {
+	font-size: 1.125em;
+	line-height: 1.4em;
+	font-style: italic;
+	max-width: 460px;
+	text-align: center;
+	margin: 20px auto;
+}
+
+#sobre img {
+	display: block;
+	max-width: 100%;
+}
+
+#sobre .sobre-item {
+	margin: 0 10px;
+	width: 460px;
+}
+
+#sobre .sobre-item h3 {
+	background-color: #252525;
+	color: #fff;
+	text-align: center;
+	width: 220px;
+	font-size: 2.25em;
+	line-height: 1em;
+	padding: 5px 0 10px 0;
+	text-transform: lowercase;
+	font-style: italic;
+	position: relative;
+	top: -25px;
+	font-weight: normal;
+}
+
+@media screen and (max-width: 767px) {
+	#sobre .sobre-item h3 {
+		font-size: 2em;
+	}
+}
+
+#sobre .sobre-item img {
+	box-shadow: 10px 10px 10px #cecece;
+}
+
+/* 4. Section Produtos */
+
+#produtos {
+	background-color: #e7e4d8;
+	border-top: 3px solid #d6d3c8;
+	border-bottom: 3px solid #d6d3c8;
+	padding: 50px 0;
+}
+
+#produtos .container {
+	display: flex;
+	justify-content: space-around;
+	flex-flow: row wrap;
+}
+
+#produtos .produtos-item {
+	width: 300px;
+	margin: 0 10px 20px 10px;
+	text-align: center;
+}
+
+#produtos .produtos-item h2 {
+	font-size: 2.25em;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+@media screen and (max-width: 767px) {
+	#produtos .produtos-item h2 {
+		font-size: 2em;
+	}
+
+	#produtos .produtos-item h2::before {
+		width: 70px;
+		height: 70px;
+	}
+}
+
+#produtos .produtos-item p {
+	font-size: 0.875em;
+	line-height: 1.4em;
+}
+
+#produtos .produtos-item h2::before {
+	width: 100px;
+	height: 100px;
+	background-color: red;
+	content: "";
+	display: block;
+	border-radius: 50%;
+	margin: 20px auto;
+	border: 5px solid #e7e4d8;
+	box-shadow: 0 0 0 5px red;
+}
+
+#produtos .produtos-item #cafe-paulista::before {
+	background-color: #492901;
+	box-shadow: 0 0 0 5px #492901;
+}
+
+#produtos .produtos-item #cafe-carioca::before {
+	background-color: #c17139;
+	box-shadow: 0 0 0 5px #c17139;
+}
+
+#produtos .produtos-item #cafe-mineiro::before {
+	background-color: #d7a54d;
+	box-shadow: 0 0 0 5px #d7a54d;
+}
+
+#produtos a {
+	text-decoration: none;
+	color: #252525;
+	font-size: 1.125em;
+	border: 3px solid #252525;
+	padding: 15px 0;
+	width: 180px;
+	display: block;
+	margin: 20px auto 0 auto;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+#produtos a:hover {
+	background-color: #252525;
+	color: #fff;
+	transition: 0.3s;
+}
+
+
+/* 5. Section Unidades */
+
+#unidades {
+	padding: 20px 0;
+}
+
+#unidades .unidades-tipo {
+	margin: 60px 0;
+	display: flex;
+	flex-direction: row;
+	flex-flow: row wrap;
+	justify-content: center;
+}
+
+#unidades .unidades-tipo {
+	margin: 60px 0;
+}
+
+#unidades .unidades-tipo img {
+	margin: 0 10px;
+	display: block;
+	width: 460px;
+}
+
+#unidades .unidades-tipo .unidade {
+	margin: 0 10px;
+	width: 460px;
+}
+
+#unidades .unidades-tipo .unidade h2 {
+	font-size: 2.25em;
+	margin-bottom: 20px;
+}
+
+#unidades .unidades-tipo .unidade p {
+	font-size: 1.125em;
+	line-height: 1.4em;
+	margin-bottom: 40px;
+}
+
+#unidades .unidades-tipo .unidade a {
+	text-decoration: none;
+	color: #252525;
+	font-size: 1.125em;
+	border: 3px solid #252525;
+	padding: 10px 20px;
+	text-transform: uppercase;
+	font-weight: bold;
+	transition: 0.3s;
+}
+
+#unidades .unidades-tipo .unidade a:hover {
+	background-color: #252525;
+	color: #fff;
+}
+
+/* Responsivo Unidades */
+
+@media screen and (max-width: 975px) {
+	#unidades .unidades-tipo {
+		text-align: center;
+	}
+
+	#unidades .unidades-tipo .unidade h2 {
+		margin-top: 10px;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	#unidades .unidades-tipo .unidade h2 {
+		font-size: 2em;
+	}
+}
+
+@media screen and (max-width: 575px) {
+	#unidades .unidades-tipo img {
+		width: 90%;
+		margin: 0 auto;
+	}
+}
+
+/* 6. Section Assinatura */
+
+#assinatura {
+	background: #e7e4d8;
+	padding: 30px 0;
+}
+
+#assinatura .container {
+	display: flex;
+	flex-direction: row;
+	flex-flow: row wrap;
+	justify-content: center;
+}
+
+#assinatura #assinatura-msg {
+	width: 460px;
+	margin: 0 10px;
+}
+
+#assinatura #assinatura-msg h2 {
+	font-size: 2.25em;
+}
+
+#assinatura #assinatura-msg p {
+	font-size: 1.5em;
+	font-style: italic;
+}
+
+#assinatura form {
+	width: 470px;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+#assinatura form label {
+	display: none;
+}
+
+#assinatura input {
+	background-color: transparent;
+	border: 3px solid #252525;
+	font-size: 1.5em;
+	font-style: italic;
+	font-family: Georgia, serif;
+	padding: 10px;
+	margin-right: -4px;
+	width: 320px;
+}
+
+#assinatura button {
+	background-color: #252525;
+	border: none;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 1.5em;
+	font-family: Georgia, serif;
+	padding: 13px 10px;
+	cursor: pointer;
+}
+
+/* responsivo Assinatura */
+@media screen and (max-width: 974px) {
+	#assinatura {
+		text-align: center;
+	}
+}
+
+@media screen and (max-width: 575px) {
+	#assinatura #assinatura-msg h2 {
+		font-size: 2em;
+	}
+
+	#assinatura #assinatura-msg p {
+		font-size: 1.25em;
+	}
+
+	#assinatura input {
+		width: 160px;
+		font-size: 1.125em;
+	}
+
+	#assinatura button {
+		font-size: 1.125em;
+	}
+}
+
+/* 7. Rodapé */
+
+footer {
+	background: #d6d3c8;
+	padding: 40px 0;
+}
+
+footer .container {
+	display: flex;
+	flex-flow: row;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+footer p {
+	font-size: 1.125em;
+	line-height: 1.4em;
+	max-width: 480px;
+	margin-left: 10px;
+}
+
+footer img {
+	margin-right: 10px;
+	object-fit: contain;
+}
+
+/* Responsivo Footer */
+
+@media screen and (max-width: 767px) {
+	footer .container {
+		flex-direction: column;
+	}
+
+	footer p {
+		text-align: center;
+		margin-bottom: 10px;
+		font-size: 1em;
+	}
+}
